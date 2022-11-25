@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -24,7 +25,7 @@
   </rowConstraints>
    <children>
       <ListView fx:id="ordreList" editable="true" onMouseClicked="#visVarer" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
-      <ListView fx:id="vareNrBeskriv" editable="true" onMouseClicked="#onHelloButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <ListView fx:id="vare" editable="true" onMouseClicked="#onHelloButtonClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Label prefHeight="47.0" prefWidth="133.0" text="Ordrenr" GridPane.rowIndex="1">
          <font>
             <Font size="26.0" />
@@ -33,7 +34,7 @@
             <Insets left="40.0" />
          </padding>
       </Label>
-      <Label prefHeight="68.0" prefWidth="248.0" text="Varenr og Beskrivelse" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Label prefHeight="68.0" prefWidth="248.0" text="Varenr og Beskrivelse" GridPane.columnIndex="2" GridPane.rowIndex="1">
          <font>
             <Font size="20.0" />
          </font>
@@ -41,23 +42,60 @@
             <Insets left="5.0" right="5.0" />
          </padding>
       </Label>
-      <ListView fx:id="vare" editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+      <ListView fx:id="vareNrBeskriv" editable="true" onMouseClicked="#valgVare" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <StackPane prefHeight="67.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
          <children>
-            <Button fx:id="tilføjOrdreButton" mnemonicParsing="false" onAction="#tilføjOrdre" text="Tilføj til ordre" />
+            <Button fx:id="tilføjButton" mnemonicParsing="false" onAction="#tilføjVare" text="Tilføj vare">
+               <StackPane.margin>
+                  <Insets top="50.0" />
+               </StackPane.margin>
+            </Button>
+            <TextField fx:id="varenrInput">
+               <StackPane.margin>
+                  <Insets bottom="50.0" right="130.0" />
+               </StackPane.margin>
+            </TextField>
+            <TextField fx:id="vareBeskrivInput" layoutX="10.0" layoutY="18.0">
+               <StackPane.margin>
+                  <Insets bottom="50.0" left="80.0" />
+               </StackPane.margin>
+            </TextField>
+            <Label prefHeight="18.0" prefWidth="38.0" text="varenr">
+               <StackPane.margin>
+                  <Insets bottom="5.0" right="140.0" />
+               </StackPane.margin>
+            </Label>
+            <Label layoutX="20.0" layoutY="42.0" text="varebeskrivelse">
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="90.0" />
+               </StackPane.margin>
+            </Label>
          </children>
       </StackPane>
-      <Label prefHeight="42.0" prefWidth="96.0" text="Vare" GridPane.columnIndex="2" GridPane.rowIndex="1">
+      <Label graphicTextGap="0.0" prefHeight="42.0" prefWidth="96.0" text="Varer" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <font>
-            <Font size="23.0" />
+            <Font size="20.0" />
          </font>
          <padding>
             <Insets left="25.0" />
          </padding>
       </Label>
-      <Button fx:id="tilføjButton" mnemonicParsing="false" onAction="#tilføjVare" text="Tilføj vare" GridPane.columnIndex="2" GridPane.rowIndex="1">
+      <Button fx:id="tilføjTilOrdre" mnemonicParsing="false" onAction="#tilføjTilOrdre" text="Tilføj til ordre" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <GridPane.margin>
-            <Insets left="90.0" />
+            <Insets left="55.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="slet" mnemonicParsing="false" onAction="#sletVareFraOrdre" prefHeight="26.0" prefWidth="32.0" text="slet" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="160.0" top="45.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#dialogKnap" text="Dialog" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets left="75.0" />
          </GridPane.margin>
       </Button>
    </children>

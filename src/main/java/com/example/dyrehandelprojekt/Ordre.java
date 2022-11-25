@@ -22,8 +22,14 @@ public class Ordre {
     public void addVare(Vare v) {
         vareList.add(v);
     }
+    public void removeVare(Vare v) {
+        vareList.remove(v);
+    }
 
     public List<Vare> getVareList() {
         return vareList;
     }
+
+
+
 }

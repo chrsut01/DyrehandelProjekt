@@ -14,6 +14,7 @@ public class Vare {
         this.varebeskrivelse = varebeskrivelse;
     }
 
+
 }
 
 
